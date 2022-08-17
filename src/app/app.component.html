@@ -1,3 +1,6 @@
 <app-person [name]="title" lastName="test" [age]="0"></app-person>
 <app-person name="Nefi" lastName="Espinoza" [age]="30"></app-person>
-<app-person name="Jesus" lastName="Flores" [age]="25"></app-person>
+<app-person name="Jesus" lastName="Flores" [age]="25" (print)="getPrint($event)"></app-person>
+
+
+

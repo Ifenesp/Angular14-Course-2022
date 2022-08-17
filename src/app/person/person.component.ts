@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-person',
@@ -7,9 +7,14 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PersonComponent implements OnInit {
 
+  //Definicion de un Input
   @Input() name: string = "";
   @Input() lastName: string = "";
   @Input() age: number = 0;
+
+
+  //Definicion de un Output
+  @Output() print = new EventEmitter()
 
 
   constructor() { }
@@ -17,4 +22,8 @@ export class PersonComponent implements OnInit {
   ngOnInit() {
   }
 
+  onPrint(event:any)
+  {
+    this.print.emit("hola")
+  }
 }
